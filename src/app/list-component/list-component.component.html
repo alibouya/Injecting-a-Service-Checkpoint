@@ -1,0 +1,35 @@
+<p id="a1">les différents candidats
+</p>
+
+<!-- <div  id="global1" class="col">
+        </div>
+        <div id="global2" class="col">
+            <app-detail-component></app-detail-component>
+        </div> -->
+<!-- <app-item-component (click)="receivedetailfromitem($event)"></app-item-component>
+<app-item-component (click)="receivedetailfromitem($event)"></app-item-component> -->
+
+<div class="container">
+    <div class="row">
+
+
+        <div id="global1" class="col" 
+        >
+            <!-- {{pers1.id}} -->
+            <app-item-component  
+             *ngFor="let selpersonne of personnes" 
+             [personne]="selpersonne" 
+             (selectpersonne)="receivedetailfromitem1($event)"
+
+            >
+                
+            </app-item-component>
+            
+          
+
+        </div>
+        <div id="global2" class="col">
+            <app-detail-component [pers1]="selectpersonne"></app-detail-component>
+        </div>
+    </div>
+    <!-- <p (click)="send(pers1[0])>candidat N° {{pers1[0].id }} <p/> -->
